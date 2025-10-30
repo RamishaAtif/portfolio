@@ -22,6 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Header */
 header {
   background: #111;
   padding: 1rem 5%;
@@ -199,6 +200,7 @@ footer {
   .hero-text h2 {
     font-size: 2rem;
   }
+
   nav ul {
     flex-direction: column;
     gap: 0.8rem;
