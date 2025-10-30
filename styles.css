@@ -1,0 +1,134 @@
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0b74de;   /* main blue */
+  --accent-dark: #095bb5;
+  --muted: #6b7280;
+  --radius: 12px;
+  --maxw: 980px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #ffffff 60%);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* page container */
+.container{
+  max-width:var(--maxw);
+  margin:40px auto;
+  padding:20px;
+}
+
+/* header */
+header.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  background:var(--card);
+  padding:30px;
+  border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(11,116,222,0.06);
+  margin-bottom:24px;
+}
+.hero .title{
+  margin:0;
+}
+.hero h1{
+  margin:0 0 6px 0;
+  font-size:2.1rem;
+  letter-spacing:0.5px;
+  color:var(--accent-dark);
+}
+.hero p.lead{
+  margin:0;
+  color:var(--muted);
+  font-size:0.98rem;
+}
+
+/* layout columns */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:20px;
+}
+
+/* main content card */
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:12px;
+  box-shadow:0 6px 22px rgba(0,0,0,0.04);
+}
+
+/* section titles */
+.card h2{
+  margin-top:0;
+  color:var(--accent);
+  font-size:1.05rem;
+}
+
+/* project list */
+.projects ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.project{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:12px 8px;
+  border-radius:10px;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.project + .project{ margin-top:10px; }
+.project:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 24px rgba(11,116,222,0.06);
+}
+.pill{
+  background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+  color:white;
+  padding:8px 10px;
+  border-radius:8px;
+  font-weight:600;
+  min-width:64px;
+  text-align:center;
+  box-shadow:0 4px 18px rgba(11,116,222,0.10);
+}
+
+/* sidebar */
+.sidebar {
+  position:relative;
+}
+.sidebar .contact{
+  display:grid;
+  gap:8px;
+  margin-top:10px;
+}
+.small { color:var(--muted); font-size:.95rem; }
+
+/* footer */
+footer{
+  text-align:center;
+  color:var(--muted);
+  margin:28px 0 60px;
+  font-size:0.9rem;
+}
+
+/* responsive */
+@media (max-width:880px){
+  .grid{ grid-template-columns: 1fr; }
+  header.hero{flex-direction:column; text-align:center}
+  .hero h1{font-size:1.6rem}
+  .pill{min-width:54px}
+}
